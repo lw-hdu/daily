@@ -2,7 +2,7 @@
 Descripttion: 
 Author: Liuwen
 Date: 2022-11-07 10:20:23
-LastEditTime: 2022-11-11 15:41:33
+LastEditTime: 2022-11-15 08:52:49
 '''
 import csv,os,datetime
 from time import sleep
@@ -50,9 +50,10 @@ def order_food():
         5、牛肉饼
         6、菜盒
         7、油饼
+        8、煎饼果子
 *************************************
             ''')
-        item = {'鸡蛋':1,'烤肠':3,'油条':0.8,'水煎包':0.5,'牛肉饼':5,'菜盒':1.3,'油饼':1}
+        item = {'鸡蛋':1,'烤肠':3,'油条':0.8,'水煎包':0.5,'牛肉饼':5,'菜盒':1.3,'油饼':1,'煎饼果子':3.5}
         
         b = input('请输入序号选择您需要的餐品，选择完毕输入q退出：')
         if b != 'q':
@@ -78,6 +79,9 @@ def order_food():
         elif b == '7':
             all_food.append(f'{n}个油饼')
             all_price.append(item['油饼']*n)
+        elif b == '8':
+            all_food.append(f'{n}个煎饼果子')
+            all_price.append(item['煎饼果子']*n)
         elif b == 'q':
             print('选择完毕，退出咯')
             break
@@ -90,16 +94,6 @@ def order_food():
         write_csv = csv.writer(file)
         write_csv.writerows(row)
     
-# def order_look():
-
-#     try:
-#         with open(f'{name}_food.csv','r',newline='',encoding='utf-8') as file:
-#             read_csv = csv.reader(file)
-#             for i in read_csv:
-#                 print(i)
-#     except FileNotFoundError:
-#         print('\n该员工还未记录，请先记录')
-#         sleep(1)
 
 def sum_order():
 
