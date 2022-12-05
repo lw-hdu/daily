@@ -1,0 +1,2 @@
+/opt/monitor-server/gateway-server/log
+/opt/monitor-server/schedule-server/log

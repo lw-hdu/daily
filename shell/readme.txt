@@ -5,3 +5,4 @@
 5、cpfile.sh：文件复制
 6、mv.sh：移动文件
 7、insert.sh：给临时表中插入多列数据
+9、start_all.sh：遍历读入文件中所有目录，启动对应的应用

@@ -2,14 +2,12 @@
 Descripttion: 
 Author: Liuwen
 Date: 2022-11-07 10:20:23
-LastEditTime: 2022-11-15 08:52:49
+LastEditTime: 2022-12-05 08:50:21
 '''
 import csv,os,datetime
 from time import sleep
 
 now = datetime.datetime.now().strftime("%Y%m%d")
-all_food = []
-all_price = []
 
 def main():
     while True:
@@ -38,6 +36,8 @@ def main():
 
 
 def order_food():
+    all_food = []
+    all_price = []
 
     while True:
         print('''
@@ -51,9 +51,13 @@ def order_food():
         6、菜盒
         7、油饼
         8、煎饼果子
+        9、肉卷
+        10、菜盒(外)
+        11、包子(外)
+        12、手抓饼
 *************************************
             ''')
-        item = {'鸡蛋':1,'烤肠':3,'油条':0.8,'水煎包':0.5,'牛肉饼':5,'菜盒':1.3,'油饼':1,'煎饼果子':3.5}
+        item = {'鸡蛋':1,'烤肠':3,'油条':0.8,'水煎包':0.5,'牛肉饼':5,'菜盒':1.3,'油饼':1,'煎饼果子':3.5,'肉卷':2.5,'菜盒(外)':3,'包子(外)':1.5,'手抓饼':2.5}
         
         b = input('请输入序号选择您需要的餐品，选择完毕输入q退出：')
         if b != 'q':
@@ -82,6 +86,18 @@ def order_food():
         elif b == '8':
             all_food.append(f'{n}个煎饼果子')
             all_price.append(item['煎饼果子']*n)
+        elif b == '9':
+            all_food.append(f'{n}个肉卷')
+            all_price.append(item['肉卷']*n)
+        elif b == '10':
+            all_food.append(f'{n}个菜盒(外)')
+            all_price.append(item['菜盒(外)']*n)
+        elif b == '11':
+            all_food.append(f'{n}个包子(外)')
+            all_price.append(item['包子(外)']*n)
+        elif b == '12':
+            all_food.append(f'{n}个手抓饼')
+            all_price.append(item['手抓饼']*n)
         elif b == 'q':
             print('选择完毕，退出咯')
             break
